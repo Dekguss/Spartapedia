@@ -134,20 +134,25 @@
         }
 
         function posting() {
-            let url = $('#url').val()
-            let star = $('#star').val()
-            let comment = $('#comment').val()
+            let url = $('#url').val();
+            let star = $('#star').val();
+            let comment = $('#comment').val();
 
             $.ajax({
                 type: 'POST',
                 url: '/movie',
-                data: { url_give: url, star_give: star, comment_give: comment },
+                data: {
+                    url_give: url,
+                    star_give: star,
+                    comment_give: comment,
+                },
                 success: function (response) {
                     alert(response['msg'])
-                    window.location.reload()
+                    window.location.reload();
                 }
             });
         }
+
 
         function open_box() {
             $('#post-box').show()

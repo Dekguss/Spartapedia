@@ -1,8 +1,10 @@
 import os
 from os.path import join, dirname
 from dotenv import load_dotenv
-from flask import Flask, render_template, request, jsonify
+import requests
+from bs4 import BeautifulSoup
 from pymongo import MongoClient
+from flask import Flask, render_template, request, jsonify
 
 dotenv_path = join(dirname(__file__), '.env')
 load_dotenv(dotenv_path)
